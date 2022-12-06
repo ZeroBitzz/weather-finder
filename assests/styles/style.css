@@ -1,13 +1,16 @@
 /* GENERAL TAGS */
 * {
     font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    color: crimson;
 }
 body {
     background-color: black;
+    display: flex;
 }
 
 header {
     background-color: crimson;
+    color: black;
     font-size: 50px;
     position: absolute;
     display: flex;
@@ -18,18 +21,20 @@ header {
 }
 
 /* SEARCH SECTION */
-#search-section {
+#search-history-section {
     font-size: 30px;
     display: flex;
     flex-flow: column;
     justify-content: space-around;
-    background-color: crimson;
     margin-top: 100px;
     width: 300px;
 }
 
 #search-city-span {
-    margin-left: 75px;
+    background-color: crimson;
+    color: black;
+    padding-left: 50px;
+    padding-right: 50px;
 }
 
 #search-form {
@@ -47,8 +52,54 @@ header {
 }
 
 #search-submit-button {
+    color: black;
     background-color: crimson;
     font-size: 15px;
     border: 5px solid black;
     border-radius: 7px;
+}
+
+#history-subsection {
+    height: 100%;
+    margin-top: 50px;
+}
+
+#history-span {
+    color: crimson;
+    text-decoration: underline;
+    padding-left: 90px;
+}
+
+/* WEATHER DISPLAY SECTION */
+#weather-display-section {
+    margin-top: 100px;
+    border: 5px solid crimson;
+    display: flex;
+    flex-flow: column;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: grey;
+}
+
+#current-weather-subsection {
+    background-color: blue;
+    border-bottom: 5px solid crimson;
+    display: flex;
+    flex-flow: column;
+    width: 100%;
+    height: 200px;
+}
+
+#five-day-weather-subsection {
+    display: flex;
+    justify-content: space-around;
+    background-color: burlywood;
+    width: 100%;
+    height: 100px;
+}
+
+.forecast-div {
+    border: 5px solid black;
 }
