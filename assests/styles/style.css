@@ -1,0 +1,54 @@
+/* GENERAL TAGS */
+* {
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+body {
+    background-color: black;
+}
+
+header {
+    background-color: crimson;
+    font-size: 50px;
+    position: absolute;
+    display: flex;
+    justify-content: space-around;
+    left: 0;
+    top: 0;
+    width: 100%;
+}
+
+/* SEARCH SECTION */
+#search-section {
+    font-size: 30px;
+    display: flex;
+    flex-flow: column;
+    justify-content: space-around;
+    background-color: crimson;
+    margin-top: 100px;
+    width: 300px;
+}
+
+#search-city-span {
+    margin-left: 75px;
+}
+
+#search-form {
+    display: flex;
+    flex-direction: column;
+}
+
+#search-textbox {
+    border: 5px solid black;
+    color: black;
+}
+#search-textbox::placeholder {
+    color: black;
+    font-size: 15px;
+}
+
+#search-submit-button {
+    background-color: crimson;
+    font-size: 15px;
+    border: 5px solid black;
+    border-radius: 7px;
+}
