@@ -12,6 +12,7 @@ $( document ).ready(function() {
         $('#current-weather-date').text(($('#search-textbox').val()) + ' ' + dayjs().format('DD/MM/YY'))
         $('#history1').text($('#search-textbox').val())
         let searchedCity = ($('#search-textbox').val())
+        $('#today-weather-icon').css("background-image", "url("+ '../images/sun.svg' +")")
 
         console.log(searchedCity)
         fetch(`http://api.openweathermap.org/geo/1.0/direct?q=${searchedCity}&limit=5&appid=4a95e5cd2ec6b313c75d4a7c3b046b39`)
@@ -21,6 +22,7 @@ $( document ).ready(function() {
             .then(response => response.json())
             .then((data) => {
                 console.log(data)
+                console.log(data.weather[0].main)
             })
         })
 
