@@ -89,6 +89,7 @@ header {
 #current-weather-subsection {
     font-size: 40px;
     border-bottom: 5px solid crimson;
+    background-color: rgb(56, 37, 37);
     display: flex;
     flex-flow: column;
     width: 100%;
@@ -116,3 +117,33 @@ header {
 }
 
 /* todays weather icon classes */
+#today-weather-icon-sun {
+    background: url('../images/sun.svg');
+    width: 40px;
+    height: 40px;
+}
+#today-weather-icon-snow {
+    background: url('../images/snow.svg');
+    width: 40px;
+    height: 40px;
+}
+#today-weather-icon-cloud {
+    background: url('../images/cloud.svg');
+    width: 75px;
+    height: 75px;
+}
+#today-weather-icon-rain {
+    background: url('../images/rain.svg');
+    width: 65px;
+    height: 65px;
+}
+
+/* date icon subsection */
+#date-icon-subsection {
+    display: flex;
+    flex-direction: row;
+}
+
+#today-date {
+    margin-right: 10px;
+}
