@@ -5,15 +5,23 @@ $( document ).ready(function() {
     function handleForm(event) { event.preventDefault(); } 
     form.addEventListener('submit', handleForm);
 
+    // DOM ELEMENTS AND EVENT LISTENERS
+    document.getElementById('search-submit-button').addEventListener("click", callApi)
+    let todayDate = document.getElementById('today-date')
+    let history1 = document.getElementById('history1')
+    let searchedCity
+    let searchTextbox = document.getElementById('search-textbox')
+    let todayWeatherIcon = document.getElementById('today-weather-icon')
+    let todayTemp = document.getElementById('today-temp')
+    let todayWind = document.getElementById('today-wind')
+    let todayHumidity = document.getElementById('today-humidity')
 
-
-    // SEARCH BUTTON
-    $('#search-submit-button').on('click', () => {
-        $('#current-weather-date').text(($('#search-textbox').val()) + ' ' + dayjs().format('DD/MM/YY'))
-        $('#history1').text($('#search-textbox').val())
-        let searchedCity = ($('#search-textbox').val())
-
-        console.log(searchedCity)
+    // API CALLER FUNCTION
+    function callApi(){
+        todayDate.innerHTML = `${searchTextbox.value} ${dayjs().format('DD/MM/YY')}`
+        history1.innerHTML = searchTextbox.value
+        searchedCity = document.getElementById('search-textbox').value
+        searchTextbox.value = ''
         fetch(`http://api.openweathermap.org/geo/1.0/direct?q=${searchedCity}&limit=5&appid=4a95e5cd2ec6b313c75d4a7c3b046b39`)
         .then(response => response.json())
         .then((data) => {
@@ -22,28 +30,39 @@ $( document ).ready(function() {
             .then((data) => {
                 console.log(data)
                 console.log(data.weather[0].main)
+                todayTemp.innerHTML = `Temperature: ${data.main.temp} F`
+                todayHumidity.innerHTML = `Humidity: ${data.main.humidity} %`
+                todayWind.innerHTML = `Wind: ${data.wind.speed} MPH`
                 switch(data.weather[0].main.toLowerCase()){
                     case 'clear':
-                        $("#today-weather-icon").attr("id", "today-weather-icon-sun")
+                        todayWeatherIcon.id = "today-weather-icon-sun"
                         console.log('clear')
                         break
                     case 'rain':
-                        $("#today-weather-icon").attr("id", "today-weather-icon-rain")
+                        todayWeatherIcon.id = "today-weather-icon-rain"
                         console.log('rain')
                         break
+                    case 'drizzle':
+                        todayWeatherIcon.id = "today-weather-icon-rain"
+                        console.log('drizzle')
+                        break
                     case 'snow':
-                        $("#today-weather-icon").attr("id", "today-weather-icon-snow")
+                        todayWeatherIcon.id = "today-weather-icon-snow"
                         console.log('snow')
                         break
                     case 'clouds':
-                        $("#today-weather-icon").attr("id", "today-weather-icon-cloud")
+                        todayWeatherIcon.id = "today-weather-icon-cloud"
                         console.log('clouds')
+                        break
+                    default:
+                        todayWeatherIcon.id = "today-weather-icon-cloud"
+                        console.log('default')
+                        break
                 }
             })
         })
+    }
 
-
-    })
     //api key 4a95e5cd2ec6b313c75d4a7c3b046b39 
 
     // fetch('http://api.openweathermap.org/geo/1.0/direct?q=london&limit=5&appid=4a95e5cd2ec6b313c75d4a7c3b046b39')
