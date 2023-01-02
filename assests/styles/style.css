@@ -96,8 +96,10 @@ header {
 }
 
 #forecast-span {
+    margin-top: 20px;
     margin-bottom: 10px;
     margin-left: 10px;
+    text-decoration: underline;
 }
 
 #five-day-weather-subsection {
@@ -121,6 +123,7 @@ header {
     background-repeat: no-repeat;
     width: 40px;
     height: 30px;
+    padding-bottom: 25px;
 }
 #today-weather-icon-snow {
     background: url('../images/snow.svg');
@@ -139,9 +142,10 @@ header {
     background-repeat: no-repeat;
     width: 80px;
     height: 30px;
+    padding-bottom: 25px;
 }
 
-/* date icon subsection */
+/* todays date icon subsection */
 #date-icon-subsection {
     display: flex;
     flex-direction: row;
@@ -149,4 +153,9 @@ header {
 
 #today-date {
     margin-right: 10px;
+}
+
+/* 5 day forecast ids and classes */
+.humiditySpan {
+    margin-bottom: 10px;
 }
