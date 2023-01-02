@@ -117,7 +117,7 @@ header {
     flex-flow: column;
 }
 
-/* todays weather icon classes */
+/* TODAYS WEATHER ICON IDS */
 #today-weather-icon-sun {
     background: url('../images/sun.svg');
     background-repeat: no-repeat;
@@ -145,7 +145,7 @@ header {
     padding-bottom: 25px;
 }
 
-/* todays date icon subsection */
+/* TODAYS DATE ICON SUBSETION*/
 #date-icon-subsection {
     display: flex;
     flex-direction: row;
@@ -155,7 +155,17 @@ header {
     margin-right: 10px;
 }
 
-/* 5 day forecast ids and classes */
+/* 5 DAY FORECAST CLASSES */
 .humiditySpan {
     margin-bottom: 10px;
+}
+
+/* HISTORY ITEMS */
+.history-items {
+    color: darkslateblue;
+}
+.history-items:hover {
+    color: crimson;
+    cursor: pointer;
+    text-decoration: underline;
 }
