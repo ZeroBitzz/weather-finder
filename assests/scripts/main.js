@@ -60,7 +60,7 @@ let forecast5 = 0
 
 // ICON DECIDER FUNCTION
 function iconDecider(switchCase, today=true){
-    // determines if it's the 5day forecast or the today forecast
+    // determines if it's the 5day forecast or the today forecast (due for refactor)
     if(today){
         switch(switchCase){
             case 'clear':
