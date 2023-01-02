@@ -171,7 +171,7 @@ $( document ).ready(function() {
             searchTextbox.value = ''
 
             // fetch requests to the openweathermap api
-            fetch(`http://api.openweathermap.org/geo/1.0/direct?q=${searchedCity}&limit=5&appid=4a95e5cd2ec6b313c75d4a7c3b046b39`)
+            fetch(`https://api.openweathermap.org/geo/1.0/direct?q=${searchedCity}&limit=5&appid=4a95e5cd2ec6b313c75d4a7c3b046b39`)
             .then(response => response.json())
             .then((data) => {
                 fetch(`https://api.openweathermap.org/data/2.5/weather?lat=${data[0].lat}&lon=${data[0].lon}&units=imperial&appid=4a95e5cd2ec6b313c75d4a7c3b046b39`)
@@ -183,7 +183,7 @@ $( document ).ready(function() {
                     todayWind.innerHTML = `Wind: ${data.wind.speed} MPH`
                     iconDecider(data.weather[0].main.toLowerCase())
                 })
-                fetch(`http://api.openweathermap.org/data/2.5/forecast?lat=${data[0].lat}&lon=${data[0].lon}&appid=4a95e5cd2ec6b313c75d4a7c3b046b39`)
+                fetch(`https://api.openweathermap.org/data/2.5/forecast?lat=${data[0].lat}&lon=${data[0].lon}&appid=4a95e5cd2ec6b313c75d4a7c3b046b39`)
                 .then(response => response.json())
                 .then((data) => {
 
