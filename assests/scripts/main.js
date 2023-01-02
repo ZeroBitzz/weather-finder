@@ -102,8 +102,10 @@ function iconDecider(switchCase, today=true){
 
 // SEARCH PREVIOUS FUNCTIONS FOR CALLING HISTORY (yes i know this is very inefficient i will refactor later)
 function history1search(){
-    searchTextbox.value = history1.innerHTML
-    callApi()
+    if(history1.innerHTML !== 'Empty for now'){
+        searchTextbox.value = history1.innerHTML
+        callApi()
+    }
 }
 function history2search(){
     searchTextbox.value = history2.innerHTML
