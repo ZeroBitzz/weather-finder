@@ -43,8 +43,20 @@ let forecastHumidity3 = document.getElementById('forecastHumidity3')
 let forecastHumidity4 = document.getElementById('forecastHumidity4')
 let forecastHumidity5 = document.getElementById('forecastHumidity5')
 
-// HISTORY DECLARATIONS AND VARIABLES
+// GETS HISTORY FROM LOCAL STORAGE IF THERE IS HISTORY THEN POPULATES DOM ELEMENTS
 let historyArr = []
+localStorage.getItem('history1') ? (historyArr[0] = localStorage.getItem('history1')) : null
+localStorage.getItem('history2') ? (historyArr[1] = localStorage.getItem('history2')) : null
+localStorage.getItem('history3') ? (historyArr[2] = localStorage.getItem('history3')) : null
+localStorage.getItem('history4') ? (historyArr[3] = localStorage.getItem('history4')) : null
+localStorage.getItem('history5') ? (historyArr[4] = localStorage.getItem('history5')) : null
+
+historyArr[0] ? (history1.innerHTML = historyArr[0]) : null
+historyArr[1] ? (history2.innerHTML = historyArr[1]) : null
+historyArr[2] ? (history3.innerHTML = historyArr[2]) : null
+historyArr[3] ? (history4.innerHTML = historyArr[3]) : null
+historyArr[4] ? (history5.innerHTML = historyArr[4]) : null
+
 history1.addEventListener("click", history1search)
 history2.addEventListener("click", history2search)
 history3.addEventListener("click", history3search)
@@ -141,6 +153,13 @@ function callApi(){
                 historyArr.shift()
                 historyArr.push(searchTextbox.value)
             }
+
+            // sets all values for local storage
+            historyArr[0] ? localStorage.setItem('history1', historyArr[0]) : null
+            historyArr[1] ? localStorage.setItem('history2', historyArr[1]) : null
+            historyArr[2] ? localStorage.setItem('history3', historyArr[2]) : null
+            historyArr[3] ? localStorage.setItem('history4', historyArr[3]) : null
+            historyArr[4] ? localStorage.setItem('history5', historyArr[4]) : null
 
             //sets the dom elements accordingly (I will refactor later)
             if(historyArr.length === 5){
