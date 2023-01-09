@@ -139,8 +139,8 @@ function history5search(){
 // API CALLER FUNCTION
 function callApi(){
     // If statement in case you enter nothing
-    if(searchTextbox.value === undefined || searchTextbox.value === '' || searchTextbox.value === null){
-        todayDate.innerHTML = 'PLEASE ENTER A CITY'
+    if(searchTextbox.value === undefined || searchTextbox.value === '' || searchTextbox.value === null || searchTextbox.value.length > 25){
+        todayDate.innerHTML = 'PLEASE ENTER A VALID CITY'
         return
     }else{
         todayDate.innerHTML = `${searchTextbox.value} ${dayjs().format('YYYY/MM/DD')}`
